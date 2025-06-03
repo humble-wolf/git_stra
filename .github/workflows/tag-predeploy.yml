@@ -1,19 +1,19 @@
-name: Tag Main on PR Open
+name: Tag Master on PR Open
 
 on:
   pull_request:
     types: [opened]
     branches:
-      - main
+      - master
 
 jobs:
-  tag-main:
+  tag-master:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout main branch
+      - name: Checkout master branch
         uses: actions/checkout@v3
         with:
-          ref: main
+          ref: master
           fetch-depth: 0  # needed to create/push tags
 
       - name: Extract Jira ticket from branch name
